@@ -1,0 +1,52 @@
+fun main() {
+    println("Hello, world!")
+
+    // Principais
+    val nome: String? = "Henrique"
+    var altura = 1.71
+    var idade = 20
+
+    println("Meu nome é $nome, minha altura é $altura e idade: $idade")
+
+    // nulas
+    var apelido: String? = "Henriquinho"
+    apelido = null 
+
+    val tamanho = apelido?.length
+
+    // interpoladas
+    println("O apelido tem $tamanho letras") // Vai imprimir "null" porque apelido é null
+    println("Daqui a 5 anos terei: ${idade + 5}")
+
+    // função com operação padrão
+    fun soma(a: Int, b: Int): Int = a + b
+    fun multiplicada(a: Int, b: Int) = a * b
+
+    val resultado = soma(5, 3)
+    val resultado2 = multiplicada(4, 3) 
+    
+    println("O resultado da soma é $resultado")
+    println("O resultado da multiplicação é $resultado2")
+
+    // controle de fluxo
+    val a = 10
+    val b = 5
+    val max = if (a > b) a else b
+    
+    val status = if (idade < 18) {
+        "Menor"
+    } else if (idade in 18..65) {
+        "Adulto"
+    } else {
+        "Idoso"
+    }
+
+    println("Status: $status | Maior valor entre $a e $b é: $max")
+    
+    class Pessoa(val nome: String, var idade: Int){
+        fun apresentar(){
+            println("Ola, sou $nome, idade $idade anos")
+        }
+    }
+    
+}
